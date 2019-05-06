@@ -1,5 +1,5 @@
 # browseURL("https://rpubs.com/bradleyboehmke/weather_graphic")
-library(tidyverse)
+suppressWarnings(suppressMessages(library("tidyverse", quietly = T)))
 
 theme_set(theme_grey() +
             theme(plot.background = element_blank(),
@@ -70,7 +70,7 @@ p0 <- bce_serie %>%
   scale_x_continuous(expand = c(0, 0),
                      breaks = c(15,45,75,105,135,165,195,228,258,288,320,350),
                      labels = month_lab)
-# p0
+p0
 
 # range(bce$year)
 # legend_data <- data.frame(x=seq(175,182),y=rnorm(8,25,1))

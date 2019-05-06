@@ -42,8 +42,9 @@ p_final <- p1 +
 
   labs(title = "Precipitaciones en Balcarce: 2018/19 y serie 1971-2017",
        subtitle = "Valores acumulados por períodos de 10 días",
-       caption = "- Campaña 2018/19 (en en puntos rojos)\n- Serie 1971-2017: mediana (puntos blancos) dentro del intervalo de 80% de probabilidad (barras azules) ")+
+       caption = "- Campaña 2018/19 (en puntos rojos)\n- Serie 1971-2017: mediana (puntos blancos) dentro del intervalo de 80% de probabilidad (barras azules) ")+
   theme(plot.caption = element_text(hjust = 0))
 
 p_final
 
+ggsave(file = "plots/bce_lluvias.png", w=80, h=50, units="mm", dpi=300, scale=2)
