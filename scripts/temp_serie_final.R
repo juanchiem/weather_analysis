@@ -1,7 +1,7 @@
-suppressWarnings(suppressMessages(library("tidyverse", quietly = T)))
-source('~/Dropbox/Proyectos/clima bce/scripts/theme_weather.R')
+pacman::p_load(tidyverse, lubridate)
+source(here::here('scripts/theme_weather.R'))
 
-bce <- readxl::read_excel("./data/bce_clima.xlsx") %>%
+bce <- readxl::read_excel(here::here("data/balcarce_clima.xlsx")) %>%
   mutate(year = lubridate::year(date),
          month = lubridate::month(date),
          julian = lubridate::yday(date))
@@ -22,7 +22,7 @@ bce_serie <- bce %>%
   ungroup()
 
 # save(bce, bce_serie, file = "~/Dropbox/Proyectos/clima bce/bce_serie.RData")
-load("~/Dropbox/Proyectos/clima bce/bce_serie.RData")
+# load("~/Dropbox/Proyectos/clima bce/bce_serie.RData")
 
 bce_18_19 <-
   bce %>%
@@ -74,5 +74,5 @@ midpoint <- function(interval) { min(interval)+(max(interval)-min(interval))/2 }
          title = "Temperatura media en Balcarce y estadíos reproductivos del girasol",
          subtitle = "- Campaña 2018/19 (línea negra)\n- Serie 1971-2017: rango 80% (banda interna) y medias extremas (bandas externas)",
          caption = "Datos registrados en la estación meteorológica de la EEA INTA Balcarce"))
-
-ggsave(file = "plots/bce_temp.png", w=80, h=50, units="mm", dpi=300, scale=2)
+p_final
+# ggsave(file = "plots/bce_temp.png", w=80, h=50, units="mm", dpi=300, scale=2)

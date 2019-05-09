@@ -1,3 +1,4 @@
+library(ggplot2)
 theme_set(theme_bw() +
             theme(axis.text.x = element_text(hjust=-1.5),
                   panel.grid.minor = element_blank(),

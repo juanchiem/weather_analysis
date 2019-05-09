@@ -1,8 +1,7 @@
-suppressWarnings(suppressMessages(library("tidyverse", quietly = T)))
-library(lubridate)
-source('~/Dropbox/Proyectos/clima bce/scripts/theme_weather.R')
+pacman::p_load(tidyverse, lubridate)
+source(here::here('scripts/theme_weather.R'))
 
-bce <- readxl::read_excel("./data/bce_clima.xlsx") %>%
+bce <- readxl::read_excel(here::here("data/balcarce_clima.xlsx")) %>%
   mutate(year = lubridate::year(date),
          month = lubridate::month(date),
          julian = lubridate::yday(date))
