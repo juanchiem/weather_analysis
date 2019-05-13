@@ -7,4 +7,4 @@ theme_set(theme_bw() +
                   plot.title = element_text(size = 11, face = "bold"),
                   plot.caption = element_text(hjust=1)))
 
-# ht = function(d, n=6) rbind(head(d, n), tail(d, n))
+## ht = function(d, n=6) rbind(head(d, n), tail(d, n))
